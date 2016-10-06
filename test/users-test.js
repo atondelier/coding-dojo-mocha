@@ -7,7 +7,7 @@ describe('users', () => {
     describe('.getUser(id)', () => {
 
         it('should return the correct user', () => {
-            users.getUser(1).should.deep.equal({id: 1});
+            return users.getUser(1).should.become({id: 1});
         });
 
     });
@@ -16,8 +16,8 @@ describe('users', () => {
 
         beforeEach(() => {
             sinon.stub(users, 'getUser');
-            users.getUser.withArgs(1).returns({id: 1});
-            users.getUser.withArgs(2).returns({id: 42});
+            users.getUser.withArgs(1).resolves({id: 1});
+            users.getUser.withArgs(2).resolves({id: 42});
         });
 
         afterEach(() => {
@@ -25,7 +25,7 @@ describe('users', () => {
         });
 
         it('should return the correct users', () => {
-            users.getUsers(1, 2, 3).should.deep.equal([{id: 1}, {id: 42}, undefined]);
+            return users.getUsers(1, 2, 3).should.become([{id: 1}, {id: 42}, undefined]);
         });
 
     });

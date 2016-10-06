@@ -1,5 +1,5 @@
 "use strict";
 
-exports.getUser = (id) => ({id});
-exports.getUsers = (...ids) => ids.map(exports.getUser)
+exports.getUser = (id) => Promise.resolve({id});
+exports.getUsers = (...ids) => Promise.all(ids.map(exports.getUser));
 
