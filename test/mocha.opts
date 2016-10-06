@@ -1,0 +1,7 @@
+--reporter spec
+--recursive
+--compilers js:babel-register
+--require ./test/before.js
+--globals clock,sinon
+--ui bdd
+

@@ -1,0 +1,22 @@
+{
+  "name": "coding-dojo-mocha",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-preset-node5": "11.1.0",
+    "babel-register": "6.16.3",
+    "chai": "3.5.0",
+    "chai-as-promised": "5.3.0",
+    "lolex": "1.5.1",
+    "mocha": "3.0.2",
+    "sinon": "1.17.5",
+    "sinon-as-promised": "4.0.2",
+    "sinon-chai": "2.8.0"
+  }
+}
